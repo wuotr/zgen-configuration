@@ -19,7 +19,7 @@ if ! zgen saved; then
     # zgen load zsh-users/zsh-completions src
 
     # theme
-    zgen oh-my-zsh themes/blinks
+    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
     # save all to init script
     zgen save
