@@ -17,6 +17,8 @@ if ! zgen saved; then
 
     # plugins
     zgen oh-my-zsh plugins/git
+    zgen load zsh-users/zsh-history-substring-search
+    zgen load zsh-users/zsh-syntax-highlighting
 
     # completions
 
