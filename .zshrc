@@ -1,8 +1,15 @@
 
-# load zgen
+# Manually set your environment language
+export LANG=en_US.UTF-8
+
+# Manually set your 'PATH' environment variable
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# Load zgen
 source "${HOME}/.zgen/zgen/zgen.zsh"
 
-# check if there's no init script
+# Check if there's no init script
 if ! zgen saved; then
     echo "Creating a zgen save"
 
@@ -10,13 +17,8 @@ if ! zgen saved; then
 
     # plugins
     zgen oh-my-zsh plugins/git
-    # zgen oh-my-zsh plugins/sudo
-    # zgen oh-my-zsh plugins/command-not-found
-    # zgen load zsh-users/zsh-syntax-highlighting
-    # zgen load /path/to/super-secret-private-plugin
 
     # completions
-    # zgen load zsh-users/zsh-completions src
 
     # theme
     zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
