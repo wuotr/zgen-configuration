@@ -24,3 +24,8 @@ if ! zgen saved; then
     # save all to init script
     zgen save
 fi
+
+# Make it easy to append your own customizations without having to modify this file too much
+if [ -f ~/.zshrc.local ]; then
+  source .zshrc.local
+fi
