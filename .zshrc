@@ -18,6 +18,7 @@ if ! zgen saved; then
     # plugins
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/npm
+    zgen oh-my-zsh plugins/wd
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-syntax-highlighting
 
@@ -32,5 +33,5 @@ fi
 
 # Make it easy to append your own customizations without having to modify this file too much
 if [ -f ~/.zshrc.local ]; then
-  source .zshrc.local
+  source ~/.zshrc.local
 fi
