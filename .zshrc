@@ -23,6 +23,7 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-syntax-highlighting
 
     # completions
+    zgen load wuotr/qfc
 
     # theme
     zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
@@ -30,6 +31,21 @@ if ! zgen saved; then
     # save all to init script
     zgen save
 fi
+
+# CUSTOM:
+# ===============================================================================================
+
+# "zsh-history-substring-search" plugin
+# -----------------------------------------------------------------------------------------------
+# => Key bindings (for UP and DOWN arrow keys)
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# "qfc" completion
+# -----------------------------------------------------------------------------------------------
+# => Load the script manually here since it's not recognized as zsh plugin automatically
+source "${HOME}/.zgen/wuotr/qfc-master/bin/qfc.sh"
 
 # Make it easy to append your own customizations without having to modify this file too much
 if [ -f ~/.zshrc.local ]; then
