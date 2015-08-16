@@ -6,6 +6,12 @@ export LANG=en_US.UTF-8
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Make it easy to add your own customizations without having to modify this file too much
+# NOTE: The file is sourced before loading zgen in order to make bullet-train (theme) options work properly.
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
+
 # Load zgen
 source "${HOME}/.zgen/zgen/zgen.zsh"
 
@@ -46,8 +52,3 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # -----------------------------------------------------------------------------------------------
 # => Load the script manually here since it's not recognized as zsh plugin automatically
 source "${HOME}/.zgen/wuotr/qfc-master/bin/qfc.sh"
-
-# Make it easy to append your own customizations without having to modify this file too much
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
