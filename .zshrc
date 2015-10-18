@@ -7,7 +7,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Make it easy to add your own customizations without having to modify this file too much
-# NOTE: The file is sourced before loading zgen in order to make bullet-train (theme) options work properly.
+# Note: The file is sourced before loading zgen so one could set variables that might be used by plugins / themes properly
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
@@ -27,9 +27,10 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/wd
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-syntax-highlighting
+    zgen load wuotr/qfc
 
     # completions
-    zgen load wuotr/qfc
+    zgen load zsh-users/zsh-completions src
 
     # theme
     zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
