@@ -1,0 +1,54 @@
+# nvm setup (=> this is needed because I installed nvm through homebrew)
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+# ------------------------------------------------------------------------------
+
+
+# (Zsh) "Bullet train" theme
+# => Segments
+export BULLETTRAIN_TIME_SHOW=true
+export BULLETTRAIN_CONTEXT_SHOW=false
+export BULLETTRAIN_IS_SSH_CLIENT=true
+export BULLETTRAIN_VIRTUALENV_SHOW=false
+export BULLETTRAIN_RVM_SHOW=false
+export BULLETTRAIN_NVM_SHOW=true
+
+export BULLETTRAIN_DIR_EXTENDED=1
+# Extended path (0=short path, 1=medium path, 2=complete path, everything else=medium path)
+
+# => Colors
+export BULLETTRAIN_TIME_BG=magenta
+# export BULLETTRAIN_TIME_FG=black
+# export BULLETTRAIN_STATUS_ERROR_BG=red
+export BULLETTRAIN_STATUS_FG=black
+# export BULLETTRAIN_DIR_BG=blue
+export BULLETTRAIN_DIR_FG=black
+export BULLETTRAIN_NVM_BG=cyan
+export BULLETTRAIN_NVM_FG=black
+
+# => Icons
+export BULLETTRAIN_GIT_ADDED=" ✚"
+export BULLETTRAIN_GIT_MODIFIED=" ✹"
+export BULLETTRAIN_GIT_DELETED=" ✖"
+export BULLETTRAIN_GIT_UNTRACKED=" ✭"
+export BULLETTRAIN_NVM_PREFIX=""
+# ------------------------------------------------------------------------------
+
+
+# => Colors
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="default"
+# ------------------------------------------------------------------------------
+
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+# export COCOS_CONSOLE_ROOT=/Applications/Cocos/frameworks/cocos2d-x-3.5/tools/cocos2d-console/bin
+# export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable COCOS_FRAMEWORKS for cocos2d-x
+# export COCOS_FRAMEWORKS=/Applications/Cocos/frameworks
+# export PATH=$COCOS_FRAMEWORKS:$PATH
+
+# Add environment variable ANT_ROOT for cocos2d-x
+# export ANT_ROOT=/Applications/Cocos/tools/ant/bin
+# export PATH=$ANT_ROOT:$PATH
+# export PATH=$PATH:/Users/wuotr/Developer/SDKs/Android/android-sdk-macosx/platform-tools
