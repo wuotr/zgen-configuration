@@ -1,6 +1,7 @@
 
 # Manually set your environment language
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Manually set your 'PATH' environment variable
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -25,9 +26,11 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/npm
     zgen oh-my-zsh plugins/wd
-    zgen load zsh-users/zsh-history-substring-search
-    zgen load zsh-users/zsh-syntax-highlighting
+    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/docker-compose
     zgen load wuotr/zsh-plugin-vscode
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
 
     # completions
     zgen load zsh-users/zsh-completions src
@@ -48,8 +51,3 @@ fi
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# "qfc" completion
-# -----------------------------------------------------------------------------------------------
-# => Load the script manually here since it's not recognized as zsh plugin automatically
-source "${HOME}/.zgen/wuotr/qfc-master/bin/qfc.sh"
