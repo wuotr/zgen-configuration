@@ -24,6 +24,7 @@ if ! zgen saved; then
 
     # plugins
     zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/git-flow
     zgen oh-my-zsh plugins/npm
     zgen oh-my-zsh plugins/wd
     zgen oh-my-zsh plugins/docker
