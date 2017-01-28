@@ -1,7 +1,8 @@
 
-# Manually set your environment language
+# Manually set your environment language & color mode
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export TERM="xterm-256color"
 
 # Manually set your 'PATH' environment variable
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
