@@ -29,7 +29,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/wd
     # zgen oh-my-zsh plugins/docker
     # zgen oh-my-zsh plugins/docker-compose
-    zgen load wuotr/zsh-plugin-vscode
+    # zgen load wuotr/zsh-plugin-vscode
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-history-substring-search
 
@@ -52,12 +52,3 @@ fi
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# KITTY terminal emulator
-# -----------------------------------------------------------------------------------------------
-# => Key bindings (for ALT / SHIFT + LEFT / RIGHT ARROW keys)
-# INFO: 'terminfo' could not be used easily with KITTY --> https://invisible-island.net/ncurses/terminfo.src.html#tic-xterm_pcfkeys
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
-bindkey "^[[1;2C" end-of-line
-bindkey "^[[1;2D" beginning-of-line

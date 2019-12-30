@@ -81,3 +81,12 @@ alias dc='docker-compose'
 # => Environment variable COCOS_FRAMEWORKS for cocos2d-x
 # export COCOS_FRAMEWORKS=/Applications/Cocos/frameworks
 # export PATH=$COCOS_FRAMEWORKS:$PATH
+
+# => Fix for KITTY terminal emulator
+# -----------------------------------------------------------------------------------------------
+# => Key bindings (for ALT / SHIFT + LEFT / RIGHT ARROW keys)
+# INFO: 'terminfo' could not be used easily with KITTY --> https://invisible-island.net/ncurses/terminfo.src.html#tic-xterm_pcfkeys
+# bindkey "^[[1;3C" forward-word
+# bindkey "^[[1;3D" backward-word
+# bindkey "^[[1;2C" end-of-line
+# bindkey "^[[1;2D" beginning-of-line
