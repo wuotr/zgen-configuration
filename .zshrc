@@ -8,10 +8,13 @@ export LC_ALL=en_US.UTF-8
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Fix dircolors for GNU ls (in WSL Ubuntu on Windows 10)
+eval `dircolors ~/.zgen/dircolors-solarized/dircolors.256dark`
+
 # Make it easy to add your own customizations without having to modify this file too much
 # Note: The file is sourced before loading zgen so one could set variables that might be used by plugins / themes properly
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
+if [ -f ~/.zgen/.zshrc.local ]; then
+  source ~/.zgen/.zshrc.local
 fi
 
 # Load zgen

@@ -1,8 +1,7 @@
 # nvm setup (=> this is needed because I installed nvm through homebrew)
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
 # ------------------------------------------------------------------------------
-
 
 # (Zsh) "Bullet train" theme
 # => Segments
