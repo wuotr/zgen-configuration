@@ -1,26 +1,90 @@
 
-# Manually set your environment language
-# INFO: Needed to make the 'BULLET TRAIN' git icons work correclty!
+# ******************************************************************************
+# START OF RELEVANT SYNTAX
+# ******************************************************************************
+
+# MANUALLY SET THE ENVIRONMENT LANGUAGE ----------------------------------------
+# => Needed to make the 'BULLET TRAIN' git icons work correclty!
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+# ==============================================================================
 
-# Manually set your 'PATH' environment variable
+
+# MANUALLY SET THE 'PATH' ENVIRONMENT VARIABLES --------------------------------
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
+# ==============================================================================
 
-# Fix dircolors for GNU ls (in WSL Ubuntu on Windows 10)
-eval `dircolors ~/.zgen/dircolors-solarized/dircolors.256dark`
 
-# Make it easy to add your own customizations without having to modify this file too much
-# Note: The file is sourced before loading zgen so one could set variables that might be used by plugins / themes properly
-if [ -f ~/.zgen/.zshrc.local ]; then
-  source ~/.zgen/.zshrc.local
+# NVM SETUP --------------------------------------------------------------------
+# => This is needed on MacOS only because NVM was installed through homebrew.
+# => On Linux / Windows WSL the if-statement should return 'false'.
+if command -v brew >/dev/null 2>&1; then
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
 fi
+# ==============================================================================
 
-# Load zgen
+
+# (ZSH) FIX 'DIRCOLORS' FOR GNU LS ---------------------------------------------
+# => The eval-statement is meant to be executed only on Linux and in WSL on Windows10.
+# => On MacOS the if-statement should return 'false'.
+if ls --color -d . >/dev/null 2>&1; then
+  eval `dircolors ~/.zgen/dircolors-solarized/dircolors.256dark`
+fi
+# ==============================================================================
+
+
+# (ZSH) 'BULLET TRAIN' THEME ---------------------------------------------------
+# => Segments
+export BULLETTRAIN_CONTEXT_DEFAULT_USER=wuotr
+# Default user.
+# If you are running with other user other than default, the "context" segment will be shown.
+
+export BULLETTRAIN_TIME_SHOW=true
+export BULLETTRAIN_CONTEXT_SHOW=false
+export BULLETTRAIN_VIRTUALENV_SHOW=false
+export BULLETTRAIN_RVM_SHOW=false
+export BULLETTRAIN_NVM_SHOW=true
+
+export BULLETTRAIN_DIR_EXTENDED=1
+# Extended path (0=short path, 1=medium path, 2=complete path, everything else=medium path).
+
+# => Colors
+export BULLETTRAIN_TIME_BG=10
+export BULLETTRAIN_TIME_FG=7
+export BULLETTRAIN_STATUS_ERROR_BG=5
+export BULLETTRAIN_STATUS_FG=0
+export BULLETTRAIN_DIR_BG=11
+export BULLETTRAIN_DIR_FG=7
+export BULLETTRAIN_NVM_BG=2
+export BULLETTRAIN_NVM_FG=0
+export BULLETTRAIN_GIT_BG=7
+export BULLETTRAIN_GIT_COLORIZE_DIRTY=true
+export BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=3
+export BULLETTRAIN_EXEC_TIME_BG=4
+
+# => Icons
+export BULLETTRAIN_GIT_DIRTY=" ✘"
+export BULLETTRAIN_GIT_CLEAN=" ✔"
+export BULLETTRAIN_GIT_ADDED=" ✚"
+export BULLETTRAIN_GIT_MODIFIED=" ✹"
+export BULLETTRAIN_GIT_DELETED=" ✖"
+export BULLETTRAIN_GIT_UNTRACKED=" ✭"
+export BULLETTRAIN_NVM_PREFIX=""
+# ==============================================================================
+
+
+# (ZSH) HISTORY-SUBSTRING-SEARCH CUSTOMISATION ---------------------------------
+setopt HIST_IGNORE_ALL_DUPS
+# ==============================================================================
+
+
+# ZGEN SETUP -------------------------------------------------------------------
+# => Load the zgen script.
 source "${HOME}/.zgen/zgen/zgen.zsh"
 
-# Check if there's no init script
+# Check if there's no init script.
 if ! zgen saved; then
     echo "Creating a zgen save"
 
@@ -32,7 +96,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/wd
     # zgen oh-my-zsh plugins/docker
     # zgen oh-my-zsh plugins/docker-compose
-    # zgen load wuotr/zsh-plugin-vscode
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-history-substring-search
 
@@ -46,12 +109,56 @@ if ! zgen saved; then
     zgen save
 fi
 
-# CUSTOM:
-# ===============================================================================================
-
-# "zsh-history-substring-search" plugin
-# -----------------------------------------------------------------------------------------------
-# => Key bindings (for UP and DOWN arrow keys)
+# => "zsh-history-substring-search" plugin
+# => Key bindings (for UP and DOWN arrow keys).
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+# ==============================================================================
+
+# ******************************************************************************
+# END OF RELEVANT SYNTAX
+# ******************************************************************************
+
+
+
+# OLD SYNTAX KEPT FOR FUTURE REFERENCE -----------------------------------------
+
+# => React Native (Android) Configuration
+# export ANDROID_HOME=~/Library/Android/sdk
+# export PATH=${PATH}:${ANDROID_HOME}/tools
+
+# => Environment variable COCOS_X_ROOT for cocos2d-x
+# export COCOS_X_ROOT=/Applications/Cocos/frameworks/cocos2d-x-3.5
+# export PATH=$COCOS_X_ROOT:$PATH
+
+# => Environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+# export COCOS_CONSOLE_ROOT=$COCOS_X_ROOT/tools/cocos2d-console/bin
+# export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# => Environment variable ANT_ROOT for cocos2d-x
+# export ANT_ROOT=/Applications/Cocos/tools/ant/bin
+# export PATH=$ANT_ROOT:$PATH
+
+# => Environment variables for Android NDK
+# export NDK_ROOT=/Users/wuotr/Developer/SDK/android-ndk-r10d/
+# export PATH=$NDK_ROOT:$PATH
+
+# => Environment variable for Android SDK
+# export ANDROID_SDK_ROOT=/Users/wuotr/Developer/SDK/android-sdks/
+# export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+# export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+
+# => Environment variable COCOS_FRAMEWORKS for cocos2d-x
+# export COCOS_FRAMEWORKS=/Applications/Cocos/frameworks
+# export PATH=$COCOS_FRAMEWORKS:$PATH
+
+# => Fix for KITTY terminal emulator
+# => Key bindings (for ALT / SHIFT + LEFT / RIGHT ARROW keys)
+# INFO: 'terminfo' could not be used easily with KITTY --> https://invisible-island.net/ncurses/terminfo.src.html#tic-xterm_pcfkeys
+# bindkey "^[[1;3C" forward-word
+# bindkey "^[[1;3D" backward-word
+# bindkey "^[[1;2C" end-of-line
+# bindkey "^[[1;2D" beginning-of-line
+
+# ==============================================================================
