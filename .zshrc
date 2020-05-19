@@ -51,12 +51,12 @@ export BULLETTRAIN_DIR_EXTENDED=1
 # Extended path (0=short path, 1=medium path, 2=complete path, everything else=medium path).
 
 # => Colors
-export BULLETTRAIN_TIME_BG=10
-export BULLETTRAIN_TIME_FG=7
+export BULLETTRAIN_TIME_BG=5
+export BULLETTRAIN_TIME_FG=0
 export BULLETTRAIN_STATUS_ERROR_BG=5
 export BULLETTRAIN_STATUS_FG=0
-export BULLETTRAIN_DIR_BG=11
-export BULLETTRAIN_DIR_FG=7
+export BULLETTRAIN_DIR_BG=6
+export BULLETTRAIN_DIR_FG=0
 export BULLETTRAIN_NVM_BG=2
 export BULLETTRAIN_NVM_FG=0
 export BULLETTRAIN_GIT_BG=7
@@ -92,6 +92,7 @@ if ! zgen saved; then
 
     # plugins
     zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/ssh-agent
     # zgen oh-my-zsh plugins/npm
     zgen oh-my-zsh plugins/wd
     # zgen oh-my-zsh plugins/docker
