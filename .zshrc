@@ -93,8 +93,9 @@ if ! zgen saved; then
     # plugins
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/ssh-agent
-    # zgen oh-my-zsh plugins/npm
     zgen oh-my-zsh plugins/wd
+    zgen load lukechilds/zsh-nvm
+    # zgen oh-my-zsh plugins/npm
     # zgen oh-my-zsh plugins/docker
     # zgen oh-my-zsh plugins/docker-compose
     zgen load zsh-users/zsh-syntax-highlighting
@@ -124,35 +125,6 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 
 
 # OLD SYNTAX KEPT FOR FUTURE REFERENCE -----------------------------------------
-
-# => React Native (Android) Configuration
-# export ANDROID_HOME=~/Library/Android/sdk
-# export PATH=${PATH}:${ANDROID_HOME}/tools
-
-# => Environment variable COCOS_X_ROOT for cocos2d-x
-# export COCOS_X_ROOT=/Applications/Cocos/frameworks/cocos2d-x-3.5
-# export PATH=$COCOS_X_ROOT:$PATH
-
-# => Environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-# export COCOS_CONSOLE_ROOT=$COCOS_X_ROOT/tools/cocos2d-console/bin
-# export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# => Environment variable ANT_ROOT for cocos2d-x
-# export ANT_ROOT=/Applications/Cocos/tools/ant/bin
-# export PATH=$ANT_ROOT:$PATH
-
-# => Environment variables for Android NDK
-# export NDK_ROOT=/Users/wuotr/Developer/SDK/android-ndk-r10d/
-# export PATH=$NDK_ROOT:$PATH
-
-# => Environment variable for Android SDK
-# export ANDROID_SDK_ROOT=/Users/wuotr/Developer/SDK/android-sdks/
-# export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
-# export PATH=$ANDROID_SDK_ROOT/tools:$PATH
-
-# => Environment variable COCOS_FRAMEWORKS for cocos2d-x
-# export COCOS_FRAMEWORKS=/Applications/Cocos/frameworks
-# export PATH=$COCOS_FRAMEWORKS:$PATH
 
 # => Fix for KITTY terminal emulator
 # => Key bindings (for ALT / SHIFT + LEFT / RIGHT ARROW keys)
