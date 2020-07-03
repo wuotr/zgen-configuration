@@ -30,7 +30,7 @@ fi
 # => The eval-statement is meant to be executed only on Linux and in WSL on Windows10.
 # => On MacOS the if-statement should return 'false'.
 if ls --color -d . >/dev/null 2>&1; then
-  eval `dircolors ~/.zgen/dircolors-solarized/dircolors.256dark`
+  eval `dircolors ~/.zgen/dircolors-solarized/dircolors.ansi-light`
 fi
 # ==============================================================================
 
@@ -51,26 +51,26 @@ export BULLETTRAIN_DIR_EXTENDED=1
 # Extended path (0=short path, 1=medium path, 2=complete path, everything else=medium path).
 
 # => Colors
-export BULLETTRAIN_TIME_BG=5
+export BULLETTRAIN_TIME_BG=6
 export BULLETTRAIN_TIME_FG=0
-export BULLETTRAIN_STATUS_ERROR_BG=5
+export BULLETTRAIN_STATUS_ERROR_BG=1
 export BULLETTRAIN_STATUS_FG=0
-export BULLETTRAIN_DIR_BG=6
+export BULLETTRAIN_DIR_BG=8
 export BULLETTRAIN_DIR_FG=0
-export BULLETTRAIN_NVM_BG=2
+export BULLETTRAIN_NVM_BG=10
 export BULLETTRAIN_NVM_FG=0
-export BULLETTRAIN_GIT_BG=7
+export BULLETTRAIN_GIT_BG=11
 export BULLETTRAIN_GIT_COLORIZE_DIRTY=true
 export BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=3
-export BULLETTRAIN_EXEC_TIME_BG=4
+export BULLETTRAIN_EXEC_TIME_BG=13
 
 # => Icons
-export BULLETTRAIN_GIT_DIRTY=" ✘"
-export BULLETTRAIN_GIT_CLEAN=" ✔"
-export BULLETTRAIN_GIT_ADDED=" ✚"
-export BULLETTRAIN_GIT_MODIFIED=" ✹"
-export BULLETTRAIN_GIT_DELETED=" ✖"
-export BULLETTRAIN_GIT_UNTRACKED=" ✭"
+export BULLETTRAIN_GIT_DIRTY=" ☐"
+export BULLETTRAIN_GIT_CLEAN=" ☑"
+export BULLETTRAIN_GIT_ADDED=" +"
+export BULLETTRAIN_GIT_MODIFIED=" *"
+export BULLETTRAIN_GIT_DELETED=" -"
+export BULLETTRAIN_GIT_UNTRACKED=" ?"
 export BULLETTRAIN_NVM_PREFIX=""
 # ==============================================================================
 
