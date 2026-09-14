@@ -4,14 +4,15 @@
 # ******************************************************************************
 
 # MANUALLY SET THE ENVIRONMENT LANGUAGE ----------------------------------------
-# => Needed to make the 'BULLET TRAIN' git icons work correclty!
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+# => Needed to make the 'BULLET TRAIN' git icons work correctly!
+export CHARSET=UTF-8
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
 # ==============================================================================
 
 
 # MANUALLY SET THE 'PATH' ENVIRONMENT VARIABLES --------------------------------
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="$PATH:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 # ==============================================================================
 
@@ -19,19 +20,19 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 # NVM SETUP --------------------------------------------------------------------
 # => This is needed on MacOS only because NVM was installed through homebrew.
 # => On Linux / Windows WSL the if-statement should return 'false'.
-if command -v brew >/dev/null 2>&1; then
-  export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
-fi
+# if command -v brew >/dev/null 2>&1; then
+#   export NVM_DIR=~/.nvm
+#   source $(brew --prefix nvm)/nvm.sh
+# fi
 # ==============================================================================
 
 
 # (ZSH) FIX 'DIRCOLORS' FOR GNU LS ---------------------------------------------
 # => The eval-statement is meant to be executed only on Linux and in WSL on Windows10.
 # => On MacOS the if-statement should return 'false'.
-if ls --color -d . >/dev/null 2>&1; then
-  eval `dircolors ~/.zgen/dircolors-solarized/dircolors.ansi-light`
-fi
+# if ls --color -d . >/dev/null 2>&1; then
+#   eval `dircolors ~/.zgen/dircolors-solarized/dircolors.ansi-light`
+# fi
 # ==============================================================================
 
 
@@ -45,33 +46,33 @@ export BULLETTRAIN_TIME_SHOW=true
 export BULLETTRAIN_CONTEXT_SHOW=false
 export BULLETTRAIN_VIRTUALENV_SHOW=false
 export BULLETTRAIN_RVM_SHOW=false
-export BULLETTRAIN_NVM_SHOW=true
+export BULLETTRAIN_NVM_SHOW=false
 
 export BULLETTRAIN_DIR_EXTENDED=1
 # Extended path (0=short path, 1=medium path, 2=complete path, everything else=medium path).
 
 # => Colors
-export BULLETTRAIN_TIME_BG=6
-export BULLETTRAIN_TIME_FG=0
+export BULLETTRAIN_TIME_BG=8
+export BULLETTRAIN_TIME_FG=7
 export BULLETTRAIN_STATUS_ERROR_BG=1
-export BULLETTRAIN_STATUS_FG=0
-export BULLETTRAIN_DIR_BG=8
-export BULLETTRAIN_DIR_FG=0
-export BULLETTRAIN_NVM_BG=10
-export BULLETTRAIN_NVM_FG=0
-export BULLETTRAIN_GIT_BG=11
+export BULLETTRAIN_STATUS_FG=7
+export BULLETTRAIN_DIR_BG=10
+export BULLETTRAIN_DIR_FG=7
+export BULLETTRAIN_GIT_BG=12
+export BULLETTRAIN_GIT_FG=7
 export BULLETTRAIN_GIT_COLORIZE_DIRTY=true
 export BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=3
-export BULLETTRAIN_EXEC_TIME_BG=13
+export BULLETTRAIN_GIT_COLORIZE_DIRTY_FG_COLOR=7
+export BULLETTRAIN_EXEC_TIME_BG=14
 
 # => Icons
-export BULLETTRAIN_GIT_DIRTY=" ☐"
-export BULLETTRAIN_GIT_CLEAN=" ☑"
-export BULLETTRAIN_GIT_ADDED=" +"
-export BULLETTRAIN_GIT_MODIFIED=" *"
-export BULLETTRAIN_GIT_DELETED=" -"
-export BULLETTRAIN_GIT_UNTRACKED=" ?"
-export BULLETTRAIN_NVM_PREFIX=""
+# export BULLETTRAIN_GIT_DIRTY=" ☐"
+# export BULLETTRAIN_GIT_CLEAN=" ☑"
+# export BULLETTRAIN_GIT_ADDED=" +"
+# export BULLETTRAIN_GIT_MODIFIED=" *"
+# export BULLETTRAIN_GIT_DELETED=" -"
+# export BULLETTRAIN_GIT_UNTRACKED=" ?"
+# export BULLETTRAIN_NVM_PREFIX=""
 # ==============================================================================
 
 
@@ -94,7 +95,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/ssh-agent
     zgen oh-my-zsh plugins/wd
-    zgen load lukechilds/zsh-nvm
+    # zgen load lukechilds/zsh-nvm
     # zgen oh-my-zsh plugins/npm
     # zgen oh-my-zsh plugins/docker
     # zgen oh-my-zsh plugins/docker-compose
